@@ -8,11 +8,12 @@
         </style>
     <title>Egzon Jashari</title>
     <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <div class="header-content">
-            <img src="../img/bild.jpg" alt="Profilbild av Egzon Jashari" class="profile-pic">
+            <img src="../img/profilbild.jpg" alt="Profilbild av Egzon Jashari" class="profile-pic">
             <h1 class="name">Egzon Jashari</h1>
             <p class="subtitle">Systemutvecklare | Student 2024-2026</p>
         </div>
@@ -31,40 +32,66 @@
                 <ul class="project-list">
                     <article class="project-container">
                         <h3>Skolsystem</h3>
-                        <p>
-                            Ett komplett system för att visa information om vilka elever som går på en skola samt vilka lärare som är anställda. 
-                            Användaren kan även lägga till ny personal eller elev.
-                        </p>
-                        <a href="#modal-banksystem" class="btn">Mer info</a>
+                        <div class="project-content">
+                            <img src="../IMG/skolapp.jpg" alt="Skolsystem" class="project-img">
+                            <p>
+                                Ett komplett system för att visa information om vilka elever som går på en skola samt vilka lärare som är anställda. 
+                                Användaren kan även lägga till ny personal eller elev.
+                            </p>
+                        </div>
+                        <a href="#modal-skolsystem" class="btn">Mer info</a>
                     </article>
+                </ul>
+                
         
                     <article class="project-container">
                         <h3>Banksystem</h3>
-                        <p>
+                        <div class="project-content">
+                            <img src="../IMG/bankapp.jpg" alt="Banksystem" class="project-img">
+                            <p>
                             Ett projekt där vi byggde ett simpelt banksystem för att kunna logga in på en specifik användare och se sina bankkonton. 
                             Användaren kan även överföra pengar mellan konton.
                         </p>
+                        </div>
                         <a href="#modal-banksystem" class="btn">Mer info</a>
                     </article>
                 </ul>
             </section>
-            <!-- Modal för Skolsystem -->
-    <div id="modal-skolsystem" class="modal">
-        <div class="modal-content">
-            <a href="#" class="close">&times;</a>
-            <h3>Skolsystem</h3>
-            <p>Detta projekt utvecklades för att effektivt hantera skoladministration. Systemet låter skolpersonal lägga till och hantera elever och lärare.</p>
-        </div>
-    </div>
 
-    <!-- Modal för Banksystem -->
-    <div id="modal-banksystem" class="modal">
-        <div class="modal-content">
-            <a href="#" class="close">&times;</a>
-            <h3>Banksystem</h3>
-            <p>En bankapplikation där användare kan logga in, se sina bankkonton och överföra pengar mellan dem.</p>
-        </div>
+<!-- Modal för Skolsystem -->
+<div id="modal-skolsystem" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Skolsystem</h3>
+        <p>Detta projekt utvecklades för att effektivt hantera skoladministration. Systemet låter skolpersonal lägga till och hantera elever och lärare.</p>
+        <ul class="skills-list">
+            <li>
+                <li onclick="window.open('https://github.com/jasharicoco/IndividualProject_School', '_blank')">
+                    <i class="fab fa-github"></i> 
+                    <span>GitHub</span>
+                </li>
+            </li>
+        </ul>
     </div>
+</div>
+
+
+<!-- Modal för Banksystem -->
+<div id="modal-banksystem" class="modal">
+    <div class="modal-content">
+        <a href="#" class="close">&times;</a>
+        <h3>Banksystem</h3>
+        <p>En bankapplikation där användare kan logga in, se sina bankkonton och överföra pengar mellan dem.</p>
+        <ul class="skills-list">
+            <li>
+                <i class="fab fa-github"></i> 
+                <span>GitHub</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
         </main>
         <footer class="footer">
             <p>&copy;</p>
