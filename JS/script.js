@@ -12,3 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.querySelectorAll('img').forEach(img => {
+    img.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+    });
+});
