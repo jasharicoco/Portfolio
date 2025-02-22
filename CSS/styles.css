@@ -49,7 +49,7 @@ body {
     opacity: 0.8;
 }
 
-/* Navigation */
+/* Navigation Styles */
 .nav {
     display: flex;
     justify-content: center;
@@ -78,7 +78,7 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 h2 {
@@ -88,41 +88,125 @@ h2 {
 
 p {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1em;
 }
 
-/* Skills */
+/* Skills Page Styles */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 00px;
     justify-content: center;
     padding: 0;
+    justify-content: center;
+    list-style: none;
 }
 
 .skills-list li {
-    font-size: 1.1em;
+    font-size: 1em;
+    font-weight: bold;
+    background: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     justify-content: center;
-    gap: 20px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #5c679a;
 }
 
 .skills-list li:hover {
-    transform: scale(1.1);
-    color: #90e0ef;
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
 }
 
 .skills-list i {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1em;
     color: #0077b6;
-    font-size: 1.5em;
+    font-size: 1.4em;
 }
 
-.skills-list li:hover i {
-    color: #90e0ef;
+/* CV Page Styles */
+.cv-section {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 2rem;
 }
 
-/* Projects */
+/* CV Header */
+.cv-section h3 {
+    font-size: 1.4rem;
+    color: #0077b6;
+    margin-bottom: 1.5rem;
+}
+
+/* CV Table */
+.cv-table {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cv-row {
+    display: flex;
+    background: linear-gradient(90deg, #ffffff, #f8feff);
+    border-radius: 8px;
+    padding: 0px;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cv-row:hover {
+    transform: scale(1.03);
+}
+
+.cv-left, .cv-right {
+    flex: 1;
+    padding: 10px;
+    text-align: left;
+}
+
+.cv-left h4 {
+    font-size: 1.2rem;
+    color: #0077b6;
+    margin-bottom: 5px;
+}
+
+.cv-left p {
+    font-size: 1rem;
+    color: #0077b6;
+}
+
+.cv-left .date {
+    font-size: 0.9rem;
+    color: #8d8d8d;
+    font-weight: bold;
+}
+
+.cv-right p {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Project Page Styles */
 .project-list {
     list-style: none;
     padding: 0;
@@ -133,17 +217,15 @@ p {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: white;
+    background: linear-gradient(90deg, #ffffff, #f8feff);
     padding: 20px;
     margin: 20px 0;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-container:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .project-container h3 {
@@ -171,6 +253,7 @@ p {
     padding: 10px 20px;
     background: #1ca2eb;
     color: white;
+    font-size: 1em;
     text-decoration: none;
     border-radius: 5px;
 }
@@ -206,36 +289,6 @@ p {
     position: relative;
 }
 
-.modal-content .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    padding: 0;
-}
-
-.modal-content .skills-list li {
-    font-size: 1.1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.modal-content .skills-list li:hover {
-    transform: scale(1.1);
-    color: #90e0ef;
-}
-
-.modal-content .skills-list i {
-    color: #0077b6;
-    font-size: 1.5em;
-}
-
-.modal-content .skills-list li:hover i {
-    color: #90e0ef;
-}
-
 .close {
     position: absolute;
     top: 10px;
@@ -245,119 +298,8 @@ p {
     color: black;
 }
 
-/* CV Section */
-.cv-section {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-}
-
-/* CV Header */
-.cv-section h3 {
-    font-size: 1.7rem;
-    color: #0077b6;
-    margin-bottom: 1.5rem;
-}
-
-/* CV Table */
-.cv-table {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.cv-row {
-    display: flex;
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 15px;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cv-row:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.cv-left, .cv-right {
-    flex: 1;
-    padding: 10px;
-    text-align: left;
-}
-
-.cv-left h4 {
-    font-size: 1.3rem;
-    color: #005f73;
-    margin-bottom: 5px;
-}
-
-.cv-left p {
-    font-size: 1rem;
-    color: #333;
-}
-
-.cv-left .date {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: bold;
-}
-
-.cv-right p {
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Skills Section */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    padding: 0;
-    list-style: none;
-}
-
-.skills-list li {
-    background: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skills-list li:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-}
-
-.skills-list i {
-    color: #0077b6;
-    font-size: 1.4em;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .cv-row {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .cv-left, .cv-right {
-        padding: 10px 0;
-    }
-
-    .skills-list {
-        flex-direction: column;
-        align-items: center;
-    }
-}
+/* Contact Page Styles */
+/* Same as Skills Styles */
 
 /* Footer */
 footer {

@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-        </style>
-    <title>Egzon Jashari</title>
+    <title>Kontakt - Egzon Jashari</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -18,25 +15,45 @@
             <p class="subtitle">Systemutvecklare | Student 2024-2026</p>
         </div>
     </header>
-        <nav class="nav">
-            <a href="index.html" class="link-home">Hem</a>
-            <a href="personlig-info.html" class="link-personlig-info">Personlig Information</a>
-            <a href="fardigheter.html" class="link-fardigheter">Färdigheter</a>
-            <a href="cv.html" class="link-cv">CV</a>
-            <a href="projekt.html" class="link-projekt">Projekt</a>
-            <a href="kontakt.html" class="link-kontakt">Kontakt</a>
-        </nav>
-        <main id="kontakt" class="container">
-            <section>
-                <h2>Välkommen till min personliga hemsida!</h2>
-                <p>Den här sidan fungerar som mitt digitala CV där jag presenterar mig själv, mina färdigheter och projekt. Här kan du få en inblick i mina kunskaper som systemutvecklare och vilka verktyg och teknologier jag behärskar.</p>
-                <p>Du kan också läsa om min bakgrund, arbetslivserfarenhet och utbildning. Under fliken “Projekt” hittar du exempel på de projekt jag har arbetat med, och under “Färdigheter” kan du se de teknologier jag behärskar, såsom C#, JavaScript, React och SQL.</p>
-                <p>Jag hoppas att du finner sidan användbar och inspirerande. Tveka inte att kontakta mig om du vill veta mer eller om du har några frågor!</p>
-            </section>
-        </main>
-        <footer class="footer">
-            <p>&copy;</p>
-        </footer>
-        <script src="../JS/script.js" defer></script>
-        </body>
-        </html>
+    <nav class="nav">
+        <a href="index.html" class="link-home">Hem</a>
+        <a href="personlig-info.html" class="link-personlig-info">Personlig Information</a>
+        <a href="fardigheter.html" class="link-fardigheter">Färdigheter</a>
+        <a href="cv.html" class="link-cv">CV</a>
+        <a href="projekt.html" class="link-projekt">Projekt</a>
+        <a href="kontakt.html" class="link-kontakt">Kontakt</a>
+    </nav>
+    <main id="kontakt" class="container">
+        <section>
+            <h2>Kontaktinformation</h2>
+            <ul class="skills-list">
+                    <li onclick="window.open('mailto:egzon@example.com', '_blank')">
+                        <i class="fa-solid fa-envelope"></i> 
+                        <span>E-post</span>
+                    </li>
+                    <li onclick="window.open('https://github.com/egzonjashari', '_blank')">
+                        <i class="fa-brands fa-github"></i> 
+                        <span>GitHub</span>
+                    </li>
+                    <li onclick="window.open('tel:+46700181213', '_blank')">
+                        <i class="fa-solid fa-phone"></i> 
+                        <span>Telefon</span>
+                    </li>
+                    <li onclick="window.open('https://linkedin.com/in/egzonjashari', '_blank')">
+                        <i class="fa-brands fa-linkedin"></i> 
+                        <span>LinkedIn</span>
+                    </li>
+                    <li onclick="window.open('https://maps.app.goo.gl/ih2YoE3GD1dgV2WM6', '_blank')">
+                        <i class="fa-solid fa-location-dot"></i> 
+                        <span>Plats</span>
+                    </li>
+            </ul>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <p>&copy;</p>
+    </footer>
+    <script src="../JS/script.js" defer></script>
+    </body>
+    </html>
