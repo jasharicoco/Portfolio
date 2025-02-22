@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-        </style>
-    <title>Egzon Jashari</title>
+    <title>Mitt CV - Egzon Jashari</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -18,25 +15,95 @@
             <p class="subtitle">Systemutvecklare | Student 2024-2026</p>
         </div>
     </header>
-        <nav class="nav">
-            <a href="index.html" class="link-home">Hem</a>
-            <a href="personlig-info.html" class="link-personlig-info">Personlig Information</a>
-            <a href="fardigheter.html" class="link-fardigheter">Färdigheter</a>
-            <a href="cv.html" class="link-cv">CV</a>
-            <a href="projekt.html" class="link-projekt">Projekt</a>
-            <a href="kontakt.html" class="link-kontakt">Kontakt</a>
-        </nav>
-        <main id="cv" class="container">
-            <section>
-                <h2>Välkommen till min personliga hemsida!</h2>
-                <p>Den här sidan fungerar som mitt digitala CV där jag presenterar mig själv, mina färdigheter och projekt. Här kan du få en inblick i mina kunskaper som systemutvecklare och vilka verktyg och teknologier jag behärskar.</p>
-                <p>Du kan också läsa om min bakgrund, arbetslivserfarenhet och utbildning. Under fliken “Projekt” hittar du exempel på de projekt jag har arbetat med, och under “Färdigheter” kan du se de teknologier jag behärskar, såsom C#, JavaScript, React och SQL.</p>
-                <p>Jag hoppas att du finner sidan användbar och inspirerande. Tveka inte att kontakta mig om du vill veta mer eller om du har några frågor!</p>
-            </section>
-        </main>
-        <footer class="footer">
-            <p>&copy;</p>
-        </footer>
-        <script src="../JS/script.js" defer></script>
-        </body>
-        </html>
+
+    <nav class="nav">
+        <a href="index.html">Hem</a>
+        <a href="personlig-info.html">Personlig Information</a>
+        <a href="fardigheter.html">Färdigheter</a>
+        <a href="cv.html" class="active">CV</a>
+        <a href="projekt.html">Projekt</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <main class="container">
+        <h2>Mitt CV</h2>
+
+        <section class="cv-section">
+            <h3>Arbetslivserfarenhet</h3>
+            <div class="cv-table">
+                <div class="cv-row">
+                    <div class="cv-left">
+                        <h4>Systemutvecklare</h4>
+                        <p><strong>Företag AB</strong></p>
+                        <span class="date">2023 - Nuvarande</span>
+                    </div>
+                    <div class="cv-right">
+                        <p>Utveckling av webbaserade system med moderna teknologier såsom JavaScript, React och .NET.</p>
+                    </div>
+                </div>
+
+                <div class="cv-row">
+                    <div class="cv-left">
+                        <h4>IT-support</h4>
+                        <p><strong>Tech Solutions</strong></p>
+                        <span class="date">2021 - 2023</span>
+                    </div>
+                    <div class="cv-right">
+                        <p>Hantering av IT-supportärenden, felsökning och systemadministration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h3>Utbildning</h3>
+            <div class="cv-table">
+                <div class="cv-row">
+                    <div class="cv-left">
+                        <h4>Systemutveckling</h4>
+                        <p><strong>Högskolan XYZ</strong></p>
+                        <span class="date">2024 - 2026</span>
+                    </div>
+                    <div class="cv-right">
+                        <p>Studerar mjukvaruutveckling med fokus på backend och frontend.</p>
+                    </div>
+                </div>
+
+                <div class="cv-row">
+                    <div class="cv-left">
+                        <h4>Teknikprogrammet</h4>
+                        <p><strong>Gymnasiet ABC</strong></p>
+                        <span class="date">2019 - 2022</span>
+                    </div>
+                    <div class="cv-right">
+                        <p>Inriktning på IT och programmering.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cv-section">
+            <h3>Kompetenser</h3>
+            <ul class="skills-list">
+                <li><i class="fas fa-code"></i> JavaScript, Python, C#</li>
+                <li><i class="fas fa-laptop-code"></i> HTML, CSS, React, .NET</li>
+                <li><i class="fas fa-database"></i> SQL, MongoDB</li>
+                <li><i class="fas fa-code-branch"></i> Git, GitHub</li>
+            </ul>
+        </section>
+
+        <section class="cv-section">
+            <h3>Språk</h3>
+            <ul class="skills-list">
+                <li><i class="fas fa-language"></i> Svenska (Modersmål)</li>
+                <li><i class="fas fa-language"></i> Engelska (Flytande)</li>
+                <li><i class="fas fa-language"></i> Tyska (Grundläggande)</li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy;</p>
+    </footer>
+    <script src="../JS/script.js" defer></script>
+    </body>
+    </html>
