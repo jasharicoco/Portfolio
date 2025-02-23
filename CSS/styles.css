@@ -169,31 +169,27 @@ p {
     gap: 20px;
 }
 
+/* CV Row */
 .cv-row {
     display: flex;
+    flex-wrap: wrap; /* Gör att raderna kan bryta på små skärmar */
     background: linear-gradient(90deg, #ffffff, #f8feff);
     border-radius: 8px;
-    padding: 0px;
+    padding: 15px;
     align-items: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-    -webkit-transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -moz-transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -ms-transition: transform 0.3s ease, box-shadow 0.3s ease;
-    -o-transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effekter */
 .cv-row:hover {
     transform: scale(1.03);
 }
 
 .cv-left, .cv-right {
-    flex: 1;
+    flex: 1 1 45%; /* För att ge mer utrymme till båda sektionerna */
     padding: 10px;
     text-align: left;
+    box-sizing: border-box; /* För att undvika att padding påverkar layouten */
 }
 
 .cv-left h4 {
@@ -218,6 +214,44 @@ p {
     color: #444;
 }
 
+/* Media Query för små skärmar (t.ex. 768px eller mindre) */
+@media (max-width: 768px) {
+    .cv-section {
+        padding: 1rem;
+    }
+
+    /* Justera headern */
+    .cv-section h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Justera textstorlekar för mindre skärmar */
+    .cv-left h4 {
+        font-size: 1.1rem;
+    }
+    
+    .cv-right p {
+        font-size: 0.9rem;
+    }
+
+    /* Gör så att raderna staplas på små skärmar */
+    .cv-row {
+        flex-direction: row;
+        padding: 10px; /* Minska padding för att ge mer utrymme */
+    }
+
+    .cv-left, .cv-right {
+        flex: 1 1 100%; /* Gör båda sektionerna 100% bredd */
+        padding: 5px; /* Minska padding */
+    }
+
+    /* Minska textstorleken för datum och övrig info */
+    .cv-left .date {
+        font-size: 0.85rem;
+    }
+}
+
+
 /* Project Page Styles */
 .project-list {
     list-style: none;
@@ -227,7 +261,7 @@ p {
 
 .project-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Säkerställ vertikal layout på små skärmar */
     gap: 10px;
     background: linear-gradient(90deg, #ffffff, #f8feff);
     padding: 20px;
@@ -242,20 +276,22 @@ p {
 
 .project-container h3 {
     color: #0077b6;
+    text-align: center;
 }
 
 .project-content {
     display: flex;
+    flex-direction: column; /* Placera bilden och texten i vertikal ordning */
     align-items: center;
-    gap: 20px;
+    gap: 10px; /* Liten mellanrum mellan bilder och text */
 }
 
 .project-img {
-    flex-shrink: 0;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 10px; /* Lägg till lite utrymme under bilden */
 }
 
 /* Buttons */
@@ -268,11 +304,38 @@ p {
     font-size: 1em;
     text-decoration: none;
     border-radius: 5px;
+    text-align: center; /* Säkerställ att knappen är centrerad */
 }
 
 .btn:hover {
     background: #0077b6;
 }
+
+/* Media Query för små skärmar (t.ex. 768px eller mindre) */
+@media (max-width: 768px) {
+    .project-container {
+        padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
+    }
+
+    .project-content {
+        align-items: center;
+        gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
+    }
+
+    .project-img {
+        width: 100px; /* Minska bildstorleken på små skärmar */
+        height: 100px;
+    }
+
+    .btn {
+        margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
+    }
+
+    .project-content p {
+        font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
+    }
+}
+
 
 /* Modal */
 .modal {
