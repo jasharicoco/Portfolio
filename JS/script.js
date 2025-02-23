@@ -18,3 +18,8 @@ document.querySelectorAll('img').forEach(img => {
     e.preventDefault();
     });
 });
+
+function toggleMenu() {
+    const nav = document.querySelector('.nav');
+    nav.classList.toggle('open');
+}
