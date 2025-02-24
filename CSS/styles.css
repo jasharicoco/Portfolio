@@ -9,6 +9,7 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* Body */
 body {
     background-color: #f4f4f4;
     color: #333;
@@ -254,20 +255,25 @@ p {
 
 /* Project Page Styles */
 .project-list {
-    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centrerar projekten horisontellt */
     padding: 0;
     margin: 0;
 }
 
+
 .project-container {
-    display: flex;
-    flex-direction: column; /* Säkerställ vertikal layout på små skärmar */
-    gap: 10px;
+    flex: 0 0 48%; /* Gör att varje projekt tar upp max 48% av bredden för att skapa två projekt per rad */
+    display: grid;
+    grid-template-columns: 1fr; /* En kolumn per container */
+    gap: 1rem;
     background: linear-gradient(180deg, #f8feff, #c1f0f8);
     padding: 20px;
-    margin: 20px 0;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Säkerställer att padding inte lägger till extra bredd */
 }
 
 .project-container:hover {
@@ -292,6 +298,17 @@ p {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px; /* Lägg till lite utrymme under bilden */
+}
+
+@media (max-width: 768px) {
+    .project-list {
+        flex-direction: column; /* Staplar projekten på små skärmar */
+        align-items: center;
+    }
+
+    .project-container {
+        max-width: 100%; /* Tar upp hela bredden på små skärmar */
+    }
 }
 
 /* Buttons */
@@ -398,13 +415,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    
-/*Mindre subtitle text*/
-.subtitle {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-    
+
 /* Visa hamburgermenyn som knapp */
 .menu-toggle {
     display: block;
@@ -420,8 +431,14 @@ footer {
     display: none;
 }
 
-    /* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
-    .nav.open a {
-        display: block;
-    }
+/* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
+.nav.open a {
+    display: block;
+}
+
+/*Mindre subtitle text*/
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
 }
