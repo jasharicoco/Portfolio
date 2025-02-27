@@ -1,0 +1,45 @@
+{
+    "work_experience": [
+      {
+        "position": "Coach/behandlingsassistent",
+        "company": "Varbergs kommun",
+        "location": "Varberg",
+        "duration": "2016-2024",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus, asperiores."
+      },
+      {
+        "position": "Dokumentservice",
+        "company": "Oslo, Norge",
+        "location": "Oslo, Norge",
+        "duration": "2014-2016",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, eius."
+      }
+    ],
+    "education": [
+      {
+        "degree": "Systemutveckling",
+        "institution": "Campus, Varberg",
+        "duration": "2024-2026",
+        "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt, cupiditate?"
+      },
+      {
+        "degree": "Undersköterska",
+        "institution": "Hermods, Varberg",
+        "duration": "2022-2024",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, neque!"
+      },
+      {
+        "degree": "Kemivetenskap",
+        "institution": "KTH, Stockholm",
+        "duration": "2011-2014",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, quasi?"
+      },
+      {
+        "degree": "Naturvetenskap",
+        "institution": "Peder Skrivares, Varberg",
+        "duration": "2008-2011",
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum, maxime!"
+      }
+    ]
+  }
+  
