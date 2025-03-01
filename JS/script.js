@@ -89,7 +89,7 @@ async function loadGitHubProjects() {
                 <article class="project-container">
                     <h3>${repo.name}</h3>
                     <div class="project-content">
-                        <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
+                    <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
                     </div>
                     <a href="${repo.html_url}" target="_blank" class="btn">Mer info</a>
                 </article>
