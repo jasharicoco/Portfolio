@@ -11,16 +11,16 @@
 
 /* Body */
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #e0d1b3; /* Mörkare sandton för mer kontrast */
+    color: #3e3e3e; /* Mörk gråbeige */
     line-height: 1.6;
     text-align: center;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(to right, #0077b6, #00b4d8);
-    color: white;
+    background: linear-gradient(to right, #c7a278, #b59d6c); /* Mörkare sand och greige för mer kontrast */
+    color: #ffffff; /* Vit text */
     text-align: center;
     padding: 2rem 1rem;
 }
@@ -36,7 +36,7 @@ body {
 
 .profile-pic:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 25px #5d87b1;
+    box-shadow: 0px 0px 25px #8b7c59; /* Starkare skugga för mer kontrast */
 }
 
 .name {
@@ -47,20 +47,21 @@ body {
 
 .subtitle {
     font-size: 1.2rem;
-    opacity: 0.8;
+    opacity: 0.9;
+    color: #b0a18e; /* Mjukare gråbeige för kontrast */
 }
 
 /* Navigation Styles */
 .nav {
     display: flex;
     justify-content: center;
-    background: #0077b6;
+    background: #a68657; /* Mer intensiv sandfärg */
     padding: 1rem 0;
 }
 
 /* Meny-länkar (visas alltid på stora skärmar) */
 .nav a {
-    color: white;
+    color: #ffffff; /* Vit text för tydlig kontrast */
     text-decoration: none;
     margin: 0 15px;
     font-weight: 600;
@@ -78,23 +79,23 @@ body {
 }
 
 .nav a:hover, .nav a.active {
-    color: #90e0ef;
+    color: #f1e1b2; /* Ljus gulaktig nyans */
     font-weight: bold;
-    border-bottom: 2px solid #90e0ef;
+    border-bottom: 2px solid #f1e1b2;
 }
 
 /* Main Content */
 .container {
     max-width: 800px;
     margin: 2rem auto;
-    background: white;
+    background: #ffffff; /* Vit bakgrund för kontrast */
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #0077b6;
+    color: #c7a278; /* Mörkare sandfärg */
     margin-bottom: 1rem;
 }
 
@@ -107,7 +108,7 @@ p {
 .skills-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 00px;
+    gap: 20px;
     justify-content: center;
     padding: 0;
     justify-content: center;
@@ -127,35 +128,31 @@ p {
     justify-content: center;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #5c679a;
+    -webkit-text-fill-color: #8c7a5b; /* Starkare brunbeige för mer kontrast */
 }
 
 .skills-list li:hover {
     transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
 }
 
 .skills-list i {
-    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    background: linear-gradient(90deg, #c7a278, #f1e1b2); /* Mörkare sand och gulaktig gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1em;
-    color: #0077b6;
+    color: #c7a278;
     font-size: 1.4em;
 }
 
 #fardigheter section {
-    margin-bottom:40px;
+    margin-bottom: 40px;
 }
 
 /* CV Page Styles */
 .cv-section {
     text-align: center;
     padding: 2rem;
-    background: white;
+    background: #ffffff; /* Vit bakgrund för bättre kontrast */
     border-radius: 8px;
     margin-bottom: 2rem;
 }
@@ -163,7 +160,7 @@ p {
 /* CV Header */
 .cv-section h3 {
     font-size: 1.4rem;
-    color: #0077b6;
+    color: #c7a278; /* Mörkare sandfärg */
     margin-bottom: 1.5rem;
 }
 
@@ -177,8 +174,8 @@ p {
 /* CV Row */
 .cv-row {
     display: flex;
-    flex-wrap: wrap; /* Gör att raderna kan bryta på små skärmar */
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, #f0e1c9, #d1c3a6); /* Ljusare sand och greige */
     border-radius: 8px;
     padding: 15px;
     align-items: center;
@@ -191,26 +188,26 @@ p {
 }
 
 .cv-left, .cv-right {
-    flex: 1 1 45%; /* För att ge mer utrymme till båda sektionerna */
+    flex: 1 1 45%;
     padding: 10px;
     text-align: left;
-    box-sizing: border-box; /* För att undvika att padding påverkar layouten */
+    box-sizing: border-box;
 }
 
 .cv-left h4 {
     font-size: 1.2rem;
-    color: #0077b6;
+    color: #c7a278; /* Mörkare sandfärg */
     margin-bottom: 5px;
 }
 
 .cv-left p {
     font-size: 1rem;
-    color: #0077b6;
+    color: #8c7a5b; /* Starkare brunbeige */
 }
 
 .cv-left .date {
     font-size: 0.9rem;
-    color: #8d8d8d;
+    color: #b0a18e; /* Lätt gråbeige */
     font-weight: bold;
 }
 
@@ -225,59 +222,53 @@ p {
         padding: 1rem;
     }
 
-    /* Justera headern */
     .cv-section h3 {
         font-size: 1.2rem;
     }
 
-    /* Justera textstorlekar för mindre skärmar */
     .cv-left h4 {
         font-size: 1.1rem;
     }
-    
+
     .cv-right p {
         font-size: 0.9rem;
     }
 
-    /* Gör så att raderna staplas på små skärmar */
     .cv-row {
         flex-direction: row;
-        padding: 10px; /* Minska padding för att ge mer utrymme */
+        padding: 10px;
     }
 
     .cv-left, .cv-right {
-        flex: 1 1 100%; /* Gör båda sektionerna 100% bredd */
-        padding: 5px; /* Minska padding */
+        flex: 1 1 100%;
+        padding: 5px;
     }
 
-    /* Minska textstorleken för datum och övrig info */
     .cv-left .date {
         font-size: 0.85rem;
     }
 }
-
 
 /* Project Page Styles */
 .project-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center; /* Centrerar projekten horisontellt */
+    justify-content: center;
     padding: 0;
     margin: 0;
 }
 
-
 .project-container {
-    flex: 0 0 48%; /* Gör att varje projekt tar upp max 48% av bredden för att skapa två projekt per rad */
+    flex: 0 0 48%;
     display: grid;
-    grid-template-columns: 1fr; /* En kolumn per container */
+    grid-template-columns: 1fr;
     gap: 1rem;
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    background: linear-gradient(180deg, #f0e1c9, #d1c3a6); /* Ljus sand och greige */
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box; /* Säkerställer att padding inte lägger till extra bredd */
+    box-sizing: border-box;
 }
 
 .project-container:hover {
@@ -285,15 +276,15 @@ p {
 }
 
 .project-container h3 {
-    color: #0077b6;
+    color: #c7a278; /* Mörkare sandfärg */
     text-align: center;
 }
 
 .project-content {
     display: flex;
-    flex-direction: column; /* Placera bilden och texten i vertikal ordning */
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Liten mellanrum mellan bilder och text */
+    gap: 10px;
 }
 
 .project-img {
@@ -301,17 +292,17 @@ p {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px; /* Lägg till lite utrymme under bilden */
+    margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
     .project-list {
-        flex-direction: column; /* Staplar projekten på små skärmar */
+        flex-direction: column;
         align-items: center;
     }
 
     .project-container {
-        max-width: 100%; /* Tar upp hela bredden på små skärmar */
+        max-width: 100%;
     }
 }
 
@@ -320,43 +311,17 @@ p {
     display: inline-block;
     margin-top: 10px;
     padding: 10px 20px;
-    background: #1ca2eb;
+    background: #a68657; /* Mer intensiv sandfärg */
     color: white;
     font-size: 1em;
     text-decoration: none;
     border-radius: 5px;
-    text-align: center; /* Säkerställ att knappen är centrerad */
+    text-align: center;
 }
 
 .btn:hover {
-    background: #0077b6;
+    background: #8c7a5b; /* Djupare brunbeige för mer kontrast */
 }
-
-/* Media Query för små skärmar (t.ex. 768px eller mindre) */
-@media (max-width: 768px) {
-    .project-container {
-        padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
-    }
-
-    .project-content {
-        align-items: center;
-        gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
-    }
-
-    .project-img {
-        width: 100px; /* Minska bildstorleken på små skärmar */
-        height: 100px;
-    }
-
-    .btn {
-        margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
-    }
-
-    .project-content p {
-        font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
-    }
-}
-
 
 /* Modal */
 .modal {
@@ -376,7 +341,7 @@ p {
 }
 
 .modal-content {
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    background: linear-gradient(180deg, #f0e1c9, #d1c3a6);
     padding: 20px;
     border-radius: 10px;
     width: 80%;
@@ -394,24 +359,19 @@ p {
     color: black;
 }
 
-/* Contact Page Styles */
-/* Same as Skills Styles */
-
 /* Footer */
 footer {
     text-align: center;
     font-size: 0.8rem;
-    background: #0077b6;
+    background: #a68657; /* Mer intensiv sandfärg */
     color: white;
     margin-top: 2rem;
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 50px; /* Sätt en höjd */
-    line-height: 50px; /* Samma som höjden för att centrera texten */
+    height: 50px;
+    line-height: 50px;
 }
-
-
 
 /* Media Query för små skärmar (t.ex. 768px eller mindre) */
 @media (max-width: 768px) {
@@ -420,29 +380,25 @@ footer {
         align-items: center;
     }
 
-/* Visa hamburgermenyn som knapp */
-.menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    visibility: visible; /* Se till att knappen alltid är synlig */
-    opacity: 1; /* Gör knappen synlig */
-}
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        visibility: visible;
+        opacity: 1;
+    }
 
-/* Dölj menyn på små skärmar (initialt) */
-.nav a:not(.menu-toggle) {
-    display: none;
-}
+    .nav a:not(.menu-toggle) {
+        display: none;
+    }
 
-/* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
-.nav.open a {
-    display: block;
-}
+    .nav.open a {
+        display: block;
+    }
 
-/*Mindre subtitle text*/
-.subtitle {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
+    .subtitle {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
 }
