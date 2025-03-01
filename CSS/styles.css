@@ -11,15 +11,15 @@
 
 /* Body */
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #fafafa;
+    color: #444;
     line-height: 1.6;
     text-align: center;
 }
 
 /* Header */
 .header {
-    background: linear-gradient(to right, #0077b6, #00b4d8);
+    background: linear-gradient(to right, #3cafa2, #264653);
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -36,7 +36,7 @@ body {
 
 .profile-pic:hover {
     transform: scale(1.1);
-    box-shadow: 0px 0px 25px #5d87b1;
+    box-shadow: 0px 0px 25px #66a3aa;
 }
 
 .name {
@@ -48,13 +48,14 @@ body {
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.8;
+    color: white;
 }
 
 /* Navigation Styles */
 .nav {
     display: flex;
     justify-content: center;
-    background: #0077b6;
+    background: #3cafa2;
     padding: 1rem 0;
 }
 
@@ -78,9 +79,9 @@ body {
 }
 
 .nav a:hover, .nav a.active {
-    color: #90e0ef;
+    color: #bcf7f0;
     font-weight: bold;
-    border-bottom: 2px solid #90e0ef;
+    border-bottom: 2px solid #4dd1c2;
 }
 
 /* Main Content */
@@ -94,7 +95,7 @@ body {
 }
 
 h2 {
-    color: #0077b6;
+    color: #2a9d8f;
     margin-bottom: 1rem;
 }
 
@@ -127,7 +128,7 @@ p {
     justify-content: center;
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #5c679a;
+    -webkit-text-fill-color: #588a85;
 }
 
 .skills-list li:hover {
@@ -139,11 +140,11 @@ p {
 }
 
 .skills-list i {
-    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    background: linear-gradient(90deg, #3cafa2, #264653);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1em;
-    color: #0077b6;
+    color: #2a9d8f;
     font-size: 1.4em;
 }
 
@@ -163,7 +164,7 @@ p {
 /* CV Header */
 .cv-section h3 {
     font-size: 1.4rem;
-    color: #0077b6;
+    color: #2a9d8f;
     margin-bottom: 1.5rem;
 }
 
@@ -178,7 +179,7 @@ p {
 .cv-row {
     display: flex;
     flex-wrap: wrap; /* Gör att raderna kan bryta på små skärmar */
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
     border-radius: 8px;
     padding: 15px;
     align-items: center;
@@ -199,13 +200,13 @@ p {
 
 .cv-left h4 {
     font-size: 1.2rem;
-    color: #0077b6;
+    color: #2a9d8f;
     margin-bottom: 5px;
 }
 
 .cv-left p {
     font-size: 1rem;
-    color: #0077b6;
+    color: #2a9d8f;
 }
 
 .cv-left .date {
@@ -267,17 +268,17 @@ p {
     margin: 0;
 }
 
-
 .project-container {
     flex: 0 0 48%; /* Gör att varje projekt tar upp max 48% av bredden för att skapa två projekt per rad */
-    display: grid;
-    grid-template-columns: 1fr; /* En kolumn per container */
-    gap: 1rem;
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    display: flex;
+    flex-direction: column; /* Gör så att innehållet placeras vertikalt */
+    justify-content: space-between; /* Gör att knappen hålls längst ner */
+    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
     padding: 20px;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box; /* Säkerställer att padding inte lägger till extra bredd */
+    height: 300px; /* Sätt en fast höjd på containern så att knappen alltid har plats */
 }
 
 .project-container:hover {
@@ -285,7 +286,7 @@ p {
 }
 
 .project-container h3 {
-    color: #0077b6;
+    color: #2a9d8f;
     text-align: center;
 }
 
@@ -294,6 +295,7 @@ p {
     flex-direction: column; /* Placera bilden och texten i vertikal ordning */
     align-items: center;
     gap: 10px; /* Liten mellanrum mellan bilder och text */
+    flex-grow: 1; /* Gör att projektinnehållet växer och lämnar plats för knappen */
 }
 
 .project-img {
@@ -312,25 +314,31 @@ p {
 
     .project-container {
         max-width: 100%; /* Tar upp hela bredden på små skärmar */
+        height: auto; /* Automatisk höjd på små skärmar */
     }
 }
 
 /* Buttons */
 .btn {
-    display: inline-block;
+    display: flex;
+    justify-content: center; /* Centrerar texten horisontellt */
+    align-items: center; /* Centrerar texten vertikalt */
     margin-top: 10px;
     padding: 10px 20px;
-    background: #1ca2eb;
+    background: #2a9d8f;
     color: white;
     font-size: 1em;
     text-decoration: none;
     border-radius: 5px;
     text-align: center; /* Säkerställ att knappen är centrerad */
+    height: 40px; /* Sätt en fast höjd för knappen */
+    min-width: 150px; /* Sätt en minimal bredd för knappen */
 }
 
 .btn:hover {
-    background: #0077b6;
+    background: #33ad9f;
 }
+
 
 /* Media Query för små skärmar (t.ex. 768px eller mindre) */
 @media (max-width: 768px) {
@@ -358,6 +366,7 @@ p {
 }
 
 
+
 /* Modal */
 .modal {
     position: fixed;
@@ -376,7 +385,7 @@ p {
 }
 
 .modal-content {
-    background: linear-gradient(180deg, #f8feff, #c1f0f8);
+    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
     padding: 20px;
     border-radius: 10px;
     width: 80%;
@@ -401,7 +410,7 @@ p {
 footer {
     text-align: center;
     font-size: 0.8rem;
-    background: #0077b6;
+    background: #2a9d8f;
     color: white;
     margin-top: 2rem;
     position: fixed;
@@ -420,29 +429,29 @@ footer {
         align-items: center;
     }
 
-/* Visa hamburgermenyn som knapp */
-.menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    visibility: visible; /* Se till att knappen alltid är synlig */
-    opacity: 1; /* Gör knappen synlig */
-}
+    /* Visa hamburgermenyn som knapp */
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        visibility: visible; /* Se till att knappen alltid är synlig */
+        opacity: 1; /* Gör knappen synlig */
+    }
 
-/* Dölj menyn på små skärmar (initialt) */
-.nav a:not(.menu-toggle) {
-    display: none;
-}
+    /* Dölj menyn på små skärmar (initialt) */
+    .nav a:not(.menu-toggle) {
+        display: none;
+    }
 
-/* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
-.nav.open a {
-    display: block;
-}
+    /* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
+    .nav.open a {
+        display: block;
+    }
 
-/*Mindre subtitle text*/
-.subtitle {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
+    /*Mindre subtitle text*/
+    .subtitle {
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
 }
