@@ -100,3 +100,37 @@ async function loadGitHubProjects() {
         console.error("Fel vid hämtning av GitHub-projekt:", error);
     }
 }
+
+// EASTER EGGS
+
+// Konfetti-effekt vid inmatning av Konami-koden
+// Konami-koden i tangentkodformat
+const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+let inputSequence = [];
+
+// Lyssna på tangenttryckningar
+document.addEventListener("keydown", (event) => {
+    inputSequence.push(event.keyCode);
+
+    // Håll bara den senaste sekvensen i minnet
+    if (inputSequence.length > konamiCode.length) {
+        inputSequence.shift();
+    }
+
+    // Kolla om användaren skrev in hela Konami-koden
+    if (JSON.stringify(inputSequence) === JSON.stringify(konamiCode)) {
+        triggerConfetti();
+        inputSequence = []; // Nollställ sekvensen efter aktivering
+    }
+});
+
+// Funktion för att trigga konfetti 🎉
+function triggerConfetti() {
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 } // Starta lite högre upp på skärmen
+    });
+
+    alert("kONAMI-kODEN aKTIVERAD! 🎉");
+}
