@@ -131,6 +131,4 @@ function triggerConfetti() {
         spread: 70,
         origin: { y: 0.6 } // Starta lite högre upp på skärmen
     });
-
-    alert("kONAMI-kODEN aKTIVERAD! 🎉");
 }
