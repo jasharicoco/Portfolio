@@ -526,6 +526,12 @@ body.secret nav {
     background-color: #ff1493; /* Färgglad bakgrund för navigation */
 }
 
+body.secret nav a:hover, body.secret nav a.active {
+    color: #ff8c00;
+    font-weight: bold;
+    border-bottom: 2px solid #ff4500;
+}
+
 body.secret footer {
     background-color: #8b008b; /* Djup lila för footer */
 }
@@ -540,4 +546,55 @@ body.secret button {
 body.secret button:hover {
     background-color: #ff8c00;
     color: #000;
+}
+
+/* Förändringar för profilbilden */
+body.secret .profile-pic {
+    transform: rotate(360deg) scale(1.2); /* Roterar och förstorar bilden */
+    box-shadow: 0px 0px 25px #ffcc00; /* Gul skugga */
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Förändringar vid hover för profilbilden i secret mode */
+body.secret .profile-pic:hover {
+    transform: scale(1.3) rotate(45deg);  /* Förstorar och roterar bilden på hover */
+    box-shadow: 0px 0px 40px #ff8c00;  /* Orange skugga */
+}
+
+/* Förändringar för namnet */
+body.secret .name {
+    font-size: 2.5rem;
+    font-family: 'Dancing Script', cursive;
+    color: #ffcc00;  /* Ljusgul text */
+    text-shadow: 0px 0px 10px #ff4500;  /* Ljusglödande effekt */
+    animation: nameBlinking 1s infinite alternate; /* Blinkande effekt */
+}
+
+/* Animation för att blinka namnet */
+@keyframes nameBlinking {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Förändringar för subtitle */
+body.secret .subtitle {
+    font-size: 1.5rem;
+    opacity: 1;
+    color: #ffcc00;  /* Ljusgul */
+    text-shadow: 0px 0px 5px #ff8c00;
+    animation: subtitlePulse 2s infinite alternate; /* Pulserande effekt */
+}
+
+/* Animation för att pulsera texten */
+@keyframes subtitlePulse {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
