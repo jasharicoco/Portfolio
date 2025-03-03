@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function () {
+    // Kontrollera om Secret Mode är aktiverat vid sidans laddning
+    if (localStorage.getItem('secretMode') === 'enabled') {
+        document.body.classList.add('secret');
+    }
+
     // Hämta alla navigeringslänkar
     const links = document.querySelectorAll(".nav a");
     const currentPage = window.location.pathname.split("/").pop();
@@ -112,33 +117,28 @@ async function loadGitHubProjects() {
 // EASTER EGGS
 
 // 1. Konfetti-effekt vid inmatning av Konami-koden
-// Konami-koden i tangentkodformat
 const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 let inputSequence = [];
 
-// Lyssna på tangenttryckningar
 document.addEventListener("keydown", (event) => {
     inputSequence.push(event.keyCode);
 
-    // Håll bara den senaste sekvensen i minnet
     if (inputSequence.length > konamiCode.length) {
         inputSequence.shift();
     }
 
-    // Kolla om användaren skrev in hela Konami-koden
     if (JSON.stringify(inputSequence) === JSON.stringify(konamiCode)) {
         triggerConfetti();
-        inputSequence = []; // Nollställ sekvensen efter aktivering
+        inputSequence = [];
     }
 });
 
-// Funktion för att trigga konfetti 🎉
 function triggerConfetti() {
     if (typeof confetti === 'function') {
         confetti({
             particleCount: 100,
             spread: 70,
-            origin: { y: 0.6 } // Starta lite högre upp på skärmen
+            origin: { y: 0.6 }
         });
     } else {
         console.error('Konfetti-funktionen är inte tillgänglig.');
@@ -157,17 +157,16 @@ const hiddenQuotes = [
 
 console.log(hiddenQuotes[Math.floor(Math.random() * hiddenQuotes.length)]);
 
-// 3. Hemlig dark mode
-let shiftCount = 0;
-
+// 3. Hemlig secret mode
 let secretCount = 0;
 
-// Funktion för att aktivera Secret Mode
 function toggleSecretMode() {
-    document.body.classList.toggle('secret');  // Aktivera eller avaktivera 'secret' läget
+    document.body.classList.toggle('secret');
     if (document.body.classList.contains('secret')) {
+        localStorage.setItem('secretMode', 'enabled');
         console.log("🤫 Secret Mode aktiverat!");
     } else {
+        localStorage.setItem('secretMode', 'disabled');
         console.log("👀 Secret Mode avaktiverat!");
     }
 }
@@ -175,12 +174,10 @@ function toggleSecretMode() {
 // Lyssna på tangenttryckningar för att aktivera Secret Mode
 document.addEventListener('keydown', (event) => {
     if (event.key === "S" || event.key === "s") {
-        secretCount++;
-        console.log(`'S' tryckt: ${secretCount} gånger`);
-
-        if (secretCount >= 5) {  // Om 'S' trycks 5 gånger
-            toggleSecretMode();  // Aktivera Secret Mode
-            secretCount = 0;     // Nollställ räknaren
+        secretCount++; // Öka räknaren för 'S' tryckningar
+        if (secretCount === 5) { // När 'S' trycks 5 gånger
+            toggleSecretMode();
+            secretCount = 0;  // Nollställ räknaren
         }
     }
 });
