@@ -455,3 +455,89 @@ footer {
         opacity: 0.8;
     }
 }
+
+/* EASTER EGGS */
+/* "Secret" klass: oväntad design */
+body.secret {
+    background-color: #ff69b4;  /* Heta rosa bakgrund */
+    color: #fff;  /* Vit text */
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Ändra bakgrund i header när Secret Mode är aktiverat */
+body.secret header {
+    background: #ff1493; /* Djup rosa bakgrund för headern */
+}
+
+/* Oväntad animation på alla sektioner */
+body.secret section {
+    animation: surpriseAnimation 3s infinite;
+}
+
+/* Animation för att göra något överraskande */
+@keyframes surpriseAnimation {
+    0% {
+        transform: rotate(0deg);
+        background-color: #ff69b4; /* Rosa */
+    }
+    25% {
+        transform: rotate(15deg);
+        background-color: #f0e68c; /* Gul */
+    }
+    50% {
+        transform: rotate(30deg);
+        background-color: #98fb98; /* Grön */
+    }
+    75% {
+        transform: rotate(45deg);
+        background-color: #ff4500; /* Röd */
+    }
+    100% {
+        transform: rotate(0deg);
+        background-color: #ff69b4; /* Återgå till rosa */
+    }
+}
+
+/* Bättre fokus på länkar */
+body.secret a {
+    color: #ffff00;  /* Ljusgul för länkar */
+    text-decoration: underline;
+    font-size: 1.2em;
+}
+
+/* Skapa en hemlig glittrande effekt */
+body.secret .glitter {
+    font-size: 1.5em;
+    color: #ffcc00;
+    animation: glitterEffect 2s linear infinite;
+}
+
+@keyframes glitterEffect {
+    0% {
+        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+    }
+    100% {
+        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+    }
+}
+
+/* Uppdatera navigeringsmenyn */
+body.secret nav {
+    background-color: #ff1493; /* Färgglad bakgrund för navigation */
+}
+
+body.secret footer {
+    background-color: #8b008b; /* Djup lila för footer */
+}
+
+/* Uppdatera knappar */
+body.secret button {
+    background-color: #ff4500;
+    color: #fff;
+    border: 2px solid #ff8c00;
+    font-size: 1.1em;
+}
+body.secret button:hover {
+    background-color: #ff8c00;
+    color: #000;
+}
