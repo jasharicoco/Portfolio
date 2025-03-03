@@ -259,13 +259,22 @@ p {
 
 
 /* Project Page Styles */
-.project-list {
+.project-list, .github-project-list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center; /* Centrerar projekten horisontellt */
     padding: 0;
     margin: 0;
+    width: 100%; /* Se till att hela bredden används */
+}
+
+.project-list {
+    margin-bottom: 20px; /* Skapar ett mellanrum efter dina egna projekt */
+}
+
+.github-project-list {
+    margin-top: 2px; /* Skapar ett mellanrum innan GitHub-projekten */
 }
 
 .project-container {
@@ -278,7 +287,7 @@ p {
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box; /* Säkerställer att padding inte lägger till extra bredd */
-    height: 300px; /* Sätt en fast höjd på containern så att knappen alltid har plats */
+    height: auto; /* Gör att höjden på containern anpassas efter innehållet */
 }
 
 .project-container:hover {
@@ -307,7 +316,7 @@ p {
 }
 
 @media (max-width: 768px) {
-    .project-list {
+    .project-list, .github-project-list {
         flex-direction: column; /* Staplar projekten på små skärmar */
         align-items: center;
     }
@@ -364,6 +373,55 @@ p {
         font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
     }
 }
+
+
+/* Buttons */
+.btn {
+    display: flex;
+    justify-content: center; /* Centrerar texten horisontellt */
+    align-items: center; /* Centrerar texten vertikalt */
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #2a9d8f;
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center; /* Säkerställ att knappen är centrerad */
+    height: 40px; /* Sätt en fast höjd för knappen */
+    min-width: 150px; /* Sätt en minimal bredd för knappen */
+}
+
+.btn:hover {
+    background: #33ad9f;
+}
+
+
+/* Media Query för små skärmar (t.ex. 768px eller mindre) */
+@media (max-width: 768px) {
+    .project-container {
+        padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
+    }
+
+    .project-content {
+        align-items: center;
+        gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
+    }
+
+    .project-img {
+        width: 100px; /* Minska bildstorleken på små skärmar */
+        height: 100px;
+    }
+
+    .btn {
+        margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
+    }
+
+    .project-content p {
+        font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
+    }
+}
+
 
 
 

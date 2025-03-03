@@ -85,21 +85,22 @@ async function loadCVData() {
 
 // Ladda GitHub-projekt från GitHub API
 async function loadGitHubProjects() {
-    const projectContainer = document.querySelector(".project-list");
+    const projectContainer = document.querySelector(".github-project-list"); // Uppdatera till rätt container
     if (projectContainer) {
-        projectContainer.innerHTML = "<p>Laddar projekt...</p>";
+        projectContainer.innerHTML = "<p>Laddar GitHub-projekt...</p>"; // Laddningsmeddelande
 
         try {
             const response = await fetch("https://api.github.com/users/jasharicoco/repos");
             const repos = await response.json();
-            projectContainer.innerHTML = "";
+            projectContainer.innerHTML = ""; // Töm nuvarande projektlistan
 
+            // Lägg till GitHub-projekt
             repos.forEach(repo => {
                 projectContainer.innerHTML += `
                     <article class="project-container">
                         <h3>${repo.name}</h3>
                         <div class="project-content">
-                        <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
+                            <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
                         </div>
                         <a href="${repo.html_url}" target="_blank" class="btn">Mer info</a>
                     </article>
@@ -113,6 +114,10 @@ async function loadGitHubProjects() {
         console.error('Något gick fel.');
     }
 }
+
+// Anropa funktionen för att ladda GitHub-projekt när sidan laddas
+window.addEventListener("DOMContentLoaded", loadGitHubProjects);
+
 
 // EASTER EGGS
 
