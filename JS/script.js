@@ -85,7 +85,8 @@ async function loadCVData() {
 
 // Ladda GitHub-projekt från GitHub API
 async function loadGitHubProjects() {
-    const projectContainer = document.querySelector(".github-project-list"); // Uppdatera till rätt container
+    const projectContainer = document.querySelector(".github-project-list");
+
     if (projectContainer) {
         projectContainer.innerHTML = "<p>Laddar GitHub-projekt...</p>"; // Laddningsmeddelande
 
@@ -111,7 +112,7 @@ async function loadGitHubProjects() {
             console.error("Fel vid hämtning av GitHub-projekt:", error);
         }
     } else {
-        console.error('Något gick fel.');
+        return;
     }
 }
 
@@ -141,8 +142,8 @@ document.addEventListener("keydown", (event) => {
 function triggerConfetti() {
     if (typeof confetti === 'function') {
         confetti({
-            particleCount: 100,
-            spread: 70,
+            particleCount: 200,
+            spread: 100,
             origin: { y: 0.6 }
         });
     } else {
