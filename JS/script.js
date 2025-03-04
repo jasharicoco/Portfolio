@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    // Kontrollera om Secret Mode är aktiverat vid sidans laddning
-    if (localStorage.getItem('secretMode') === 'enabled') {
-        document.body.classList.add('secret');
-    }
-
     // Hämta alla navigeringslänkar
     const links = document.querySelectorAll(".nav a");
     const currentPage = window.location.pathname.split("/").pop();
@@ -76,7 +71,7 @@ async function loadCVData() {
                 `;
             });
         } else {
-            console.error('Något gick fel.');
+            return;
         }
     } catch (error) {
         console.error('Fel vid inläsning av CV-data:', error);
@@ -85,23 +80,21 @@ async function loadCVData() {
 
 // Ladda GitHub-projekt från GitHub API
 async function loadGitHubProjects() {
-    const projectContainer = document.querySelector(".github-project-list");
-
+    const projectContainer = document.querySelector(".project-list");
     if (projectContainer) {
-        projectContainer.innerHTML = "<p>Laddar GitHub-projekt...</p>"; // Laddningsmeddelande
+        projectContainer.innerHTML = "<p>Laddar projekt...</p>";
 
         try {
             const response = await fetch("https://api.github.com/users/jasharicoco/repos");
             const repos = await response.json();
-            projectContainer.innerHTML = ""; // Töm nuvarande projektlistan
+            projectContainer.innerHTML = "";
 
-            // Lägg till GitHub-projekt
             repos.forEach(repo => {
                 projectContainer.innerHTML += `
                     <article class="project-container">
                         <h3>${repo.name}</h3>
                         <div class="project-content">
-                            <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
+                        <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
                         </div>
                         <a href="${repo.html_url}" target="_blank" class="btn">Mer info</a>
                     </article>
@@ -116,35 +109,36 @@ async function loadGitHubProjects() {
     }
 }
 
-// Anropa funktionen för att ladda GitHub-projekt när sidan laddas
-window.addEventListener("DOMContentLoaded", loadGitHubProjects);
-
-
 // EASTER EGGS
 
 // 1. Konfetti-effekt vid inmatning av Konami-koden
+// Konami-koden i tangentkodformat
 const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
 let inputSequence = [];
 
+// Lyssna på tangenttryckningar
 document.addEventListener("keydown", (event) => {
     inputSequence.push(event.keyCode);
 
+    // Håll bara den senaste sekvensen i minnet
     if (inputSequence.length > konamiCode.length) {
         inputSequence.shift();
     }
 
+    // Kolla om användaren skrev in hela Konami-koden
     if (JSON.stringify(inputSequence) === JSON.stringify(konamiCode)) {
         triggerConfetti();
-        inputSequence = [];
+        inputSequence = []; // Nollställ sekvensen efter aktivering
     }
 });
 
+// Funktion för att trigga konfetti 🎉
 function triggerConfetti() {
     if (typeof confetti === 'function') {
         confetti({
-            particleCount: 200,
-            spread: 100,
-            origin: { y: 0.6 }
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 } // Starta lite högre upp på skärmen
         });
     } else {
         console.error('Konfetti-funktionen är inte tillgänglig.');
@@ -163,16 +157,17 @@ const hiddenQuotes = [
 
 console.log(hiddenQuotes[Math.floor(Math.random() * hiddenQuotes.length)]);
 
-// 3. Hemlig secret mode
+// 3. Hemlig dark mode
+let shiftCount = 0;
+
 let secretCount = 0;
 
+// Funktion för att aktivera Secret Mode
 function toggleSecretMode() {
-    document.body.classList.toggle('secret');
+    document.body.classList.toggle('secret');  // Aktivera eller avaktivera 'secret' läget
     if (document.body.classList.contains('secret')) {
-        localStorage.setItem('secretMode', 'enabled');
         console.log("🤫 Secret Mode aktiverat!");
     } else {
-        localStorage.setItem('secretMode', 'disabled');
         console.log("👀 Secret Mode avaktiverat!");
     }
 }
@@ -180,10 +175,12 @@ function toggleSecretMode() {
 // Lyssna på tangenttryckningar för att aktivera Secret Mode
 document.addEventListener('keydown', (event) => {
     if (event.key === "S" || event.key === "s") {
-        secretCount++; // Öka räknaren för 'S' tryckningar
-        if (secretCount === 5) { // När 'S' trycks 5 gånger
-            toggleSecretMode();
-            secretCount = 0;  // Nollställ räknaren
+        secretCount++;
+        console.log(`'S' tryckt: ${secretCount} gånger`);
+
+        if (secretCount >= 5) {  // Om 'S' trycks 5 gånger
+            toggleSecretMode();  // Aktivera Secret Mode
+            secretCount = 0;     // Nollställ räknaren
         }
     }
 });

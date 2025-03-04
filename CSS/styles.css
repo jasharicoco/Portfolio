@@ -141,9 +141,10 @@ p {
 
 .skills-list i {
     background: linear-gradient(90deg, #3cafa2, #264653);
-    -webkit-background-clip: text;
+    background-clip: text; /* Standard */
+    -webkit-background-clip: text; /* För WebKit-baserade webbläsare */
     -webkit-text-fill-color: transparent;
-    font-size: 1em;
+    display: inline-block;
     color: #2a9d8f;
     font-size: 1.4em;
 }
