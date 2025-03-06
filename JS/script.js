@@ -78,11 +78,10 @@ async function loadCVData() {
     }
 }
 
-// Ladda GitHub-projekt från GitHub API
 async function loadGitHubProjects() {
-    const projectContainer = document.querySelector(".project-list");
+    const projectContainer = document.querySelector(".github-project-list");
     if (projectContainer) {
-        projectContainer.innerHTML = "<p>Laddar projekt...</p>";
+        projectContainer.innerHTML = "<p>Laddar GitHub-projekt...</p>";
 
         try {
             const response = await fetch("https://api.github.com/users/jasharicoco/repos");
@@ -91,17 +90,17 @@ async function loadGitHubProjects() {
 
             repos.forEach(repo => {
                 projectContainer.innerHTML += `
-                    <article class="project-container">
+                    <li class="project-container">
                         <h3>${repo.name}</h3>
                         <div class="project-content">
                         <p>${repo.description || "Ingen beskrivning tillgänglig."}</p>
                         </div>
                         <a href="${repo.html_url}" target="_blank" class="btn">Mer info</a>
-                    </article>
+                    </li>
                 `;
             });
         } catch (error) {
-            projectContainer.innerHTML = "<p>Kunde inte ladda projekt. Försök igen senare.</p>";
+            projectContainer.innerHTML = "<p>Kunde inte ladda GitHub-projekt. Försök igen senare.</p>";
             console.error("Fel vid hämtning av GitHub-projekt:", error);
         }
     } else {
