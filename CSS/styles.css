@@ -1,459 +1,658 @@
 /* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@300;400;600&display=swap');
-
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
-
-/* Body */
-body {
-    background-color: #fafafa;
-    color: #444;
-    line-height: 1.6;
-    text-align: center;
-}
-
-/* Header */
-.header {
-    background: linear-gradient(to right, #3cafa2, #264653);
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid white;
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 25px #66a3aa;
-}
-
-.name {
-    font-size: 2rem;
-    margin-top: 1rem;
-    font-family: 'Dancing Script', cursive;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    color: white;
-}
-
-/* Navigation Styles */
-.nav {
-    display: flex;
-    justify-content: center;
-    background: #3cafa2;
-    padding: 1rem 0;
-}
-
-/* Meny-länkar (visas alltid på stora skärmar) */
-.nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-/* Dölj menyn på små skärmar */
-.nav a {
-    display: block;
-}
-
-/* Dölj hamburgermenyknappen på stora skärmar */
-.menu-toggle {
-    display: none;  /* Dold som standard på större skärmar */
-}
-
-.nav a:hover, .nav a.active {
-    color: #bcf7f0;
-    font-weight: bold;
-    border-bottom: 2px solid #4dd1c2;
-}
-
-/* Main Content */
-.container {
-    max-width: 800px;
-    margin: 2rem auto;
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-h2 {
-    color: #2a9d8f;
-    margin-bottom: 1rem;
-}
-
-p {
-    margin-bottom: 1rem;
-    font-size: 1em;
-}
-
-/* Skills Page Styles */
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 00px;
-    justify-content: center;
-    padding: 0;
-    justify-content: center;
-    list-style: none;
-}
-
-.skills-list li {
-    font-size: 1em;
-    font-weight: bold;
-    background: #ffffff;
-    padding: 10px 15px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    justify-content: center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #588a85;
-}
-
-.skills-list li:hover {
-    transform: scale(1.15);
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-}
-
-.skills-list i {
-    background: linear-gradient(90deg, #3cafa2, #264653);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 1em;
-    color: #2a9d8f;
-    font-size: 1.4em;
-}
-
-#fardigheter section {
-    margin-bottom:40px;
-}
-
-/* CV Page Styles */
-.cv-section {
-    text-align: center;
-    padding: 2rem;
-    background: white;
-    border-radius: 8px;
-    margin-bottom: 2rem;
-}
-
-/* CV Header */
-.cv-section h3 {
-    font-size: 1.4rem;
-    color: #2a9d8f;
-    margin-bottom: 1.5rem;
-}
-
-/* CV Table */
-.cv-table {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* CV Row */
-.cv-row {
-    display: flex;
-    flex-wrap: wrap; /* Gör att raderna kan bryta på små skärmar */
-    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
-    border-radius: 8px;
-    padding: 15px;
-    align-items: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effekter */
-.cv-row:hover {
-    transform: scale(1.03);
-}
-
-.cv-left, .cv-right {
-    flex: 1 1 45%; /* För att ge mer utrymme till båda sektionerna */
-    padding: 10px;
-    text-align: left;
-    box-sizing: border-box; /* För att undvika att padding påverkar layouten */
-}
-
-.cv-left h4 {
-    font-size: 1.2rem;
-    color: #2a9d8f;
-    margin-bottom: 5px;
-}
-
-.cv-left p {
-    font-size: 1rem;
-    color: #2a9d8f;
-}
-
-.cv-left .date {
-    font-size: 0.9rem;
-    color: #8d8d8d;
-    font-weight: bold;
-}
-
-.cv-right p {
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Media Query för små skärmar (t.ex. 768px eller mindre) */
-@media (max-width: 768px) {
-    .cv-section {
-        padding: 1rem;
-    }
-
-    /* Justera headern */
-    .cv-section h3 {
-        font-size: 1.2rem;
-    }
-
-    /* Justera textstorlekar för mindre skärmar */
-    .cv-left h4 {
-        font-size: 1.1rem;
-    }
-    
-    .cv-right p {
-        font-size: 0.9rem;
-    }
-
-    /* Gör så att raderna staplas på små skärmar */
-    .cv-row {
-        flex-direction: row;
-        padding: 10px; /* Minska padding för att ge mer utrymme */
-    }
-
-    .cv-left, .cv-right {
-        flex: 1 1 100%; /* Gör båda sektionerna 100% bredd */
-        padding: 5px; /* Minska padding */
-    }
-
-    /* Minska textstorleken för datum och övrig info */
-    .cv-left .date {
-        font-size: 0.85rem;
-    }
-}
-
-
-/* Project Page Styles */
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* Centrerar projekten horisontellt */
-    padding: 0;
-    margin: 0;
-}
-
-.project-container {
-    flex: 0 0 48%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-sizing: border-box;
-    min-height: 100px; /* Minsta höjd, men kan växa vid behov */
-    height: auto; /* Låter containern växa om det behövs */
-    margin-bottom: 20px;
-}
-
-.project-container:hover {
-    transform: scale(1.05);
-}
-
-.project-container h3 {
-    color: #2a9d8f;
-    text-align: center;
-}
-
-.project-content {
-    display: flex;
-    flex-direction: column; /* Placera bilden och texten i vertikal ordning */
-    align-items: center;
-    gap: 10px; /* Liten mellanrum mellan bilder och text */
-    flex-grow: 1; /* Gör att projektinnehållet växer och lämnar plats för knappen */
-}
-
-.project-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px; /* Lägg till lite utrymme under bilden */
-}
-
-@media (max-width: 768px) {
-    .project-list {
-        flex-direction: column; /* Staplar projekten på små skärmar */
-        align-items: center;
-    }
-
-    .project-container {
-        max-width: 100%; /* Tar upp hela bredden på små skärmar */
-        height: auto; /* Automatisk höjd på små skärmar */
-    }
-}
-
-/* Buttons */
-.btn {
-    display: flex;
-    justify-content: center; /* Centrerar texten horisontellt */
-    align-items: center; /* Centrerar texten vertikalt */
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #2a9d8f;
-    color: white;
-    font-size: 1em;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center; /* Säkerställ att knappen är centrerad */
-    height: 40px; /* Sätt en fast höjd för knappen */
-    min-width: 150px; /* Sätt en minimal bredd för knappen */
-}
-
-.btn:hover {
-    background: #33ad9f;
-}
-
-
-/* Media Query för små skärmar (t.ex. 768px eller mindre) */
-@media (max-width: 768px) {
-    .project-container {
-        padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
-    }
-
-    .project-content {
-        align-items: center;
-        gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
-    }
-
-    .project-img {
-        width: 100px; /* Minska bildstorleken på små skärmar */
-        height: 100px;
-    }
-
-    .btn {
-        margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
-    }
-
-    .project-content p {
-        font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
-    }
-}
-
-
-
-/* Modal */
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal:target {
-    display: flex;
-}
-
-.modal-content {
-    background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
-    text-decoration: none;
-    color: black;
-}
-
-/* Contact Page Styles */
-/* Same as Skills Styles */
-
-/* Footer */
-footer {
-    text-align: center;
-    font-size: 0.8rem;
-    background: #2a9d8f;
-    color: white;
-    margin-top: 2rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 50px; /* Sätt en höjd */
-    line-height: 50px; /* Samma som höjden för att centrera texten */
-}
-
-
-
-/* Media Query för små skärmar (t.ex. 768px eller mindre) */
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    /* Visa hamburgermenyn som knapp */
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        font-size: 16px;
-        color: white;
-        visibility: visible; /* Se till att knappen alltid är synlig */
-        opacity: 1; /* Gör knappen synlig */
-    }
-
-    /* Dölj menyn på små skärmar (initialt) */
-    .nav a:not(.menu-toggle) {
-        display: none;
-    }
-
-    /* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
-    .nav.open a {
-        display: block;
-    }
-
-    /*Mindre subtitle text*/
-    .subtitle {
-        font-size: 0.9rem;
-        opacity: 0.8;
-    }
-}
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter:wght@300;400;600&display=swap');
+ 
+ /* General Reset */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Inter', sans-serif;
+ }
+ 
+ /* Body */
+ body {
+     background-color: #fafafa;
+     color: #444;
+     line-height: 1.6;
+     text-align: center;
+ }
+ 
+ /* Header */
+ .header {
+     background: linear-gradient(to right, #3cafa2, #264653);
+     color: white;
+     text-align: center;
+     padding: 2rem 1rem;
+ }
+ 
+ .profile-pic {
+     width: 150px;
+     height: 150px;
+     border-radius: 50%;
+     object-fit: cover;
+     border: 4px solid white;
+     transition: transform 0.6s ease, box-shadow 0.6s ease;
+ }
+ 
+ .profile-pic:hover {
+     transform: scale(1.1);
+     box-shadow: 0px 0px 25px #66a3aa;
+ }
+ 
+ .name {
+     font-size: 2rem;
+     margin-top: 1rem;
+     font-family: 'Dancing Script', cursive;
+ }
+ 
+ .subtitle {
+     font-size: 1.2rem;
+     opacity: 0.8;
+     color: white;
+ }
+ 
+ /* Navigation Styles */
+ .nav {
+     display: flex;
+     justify-content: center;
+     background: #3cafa2;
+     padding: 1rem 0;
+ }
+ 
+ /* Meny-länkar (visas alltid på stora skärmar) */
+ .nav a {
+     color: white;
+     text-decoration: none;
+     margin: 0 15px;
+     font-weight: 600;
+     transition: 0.3s;
+ }
+ 
+ /* Dölj menyn på små skärmar */
+ .nav a {
+     display: block;
+ }
+ 
+ /* Dölj hamburgermenyknappen på stora skärmar */
+ .menu-toggle {
+     display: none;  /* Dold som standard på större skärmar */
+ }
+ 
+ .nav a:hover, .nav a.active {
+     color: #bcf7f0;
+     font-weight: bold;
+     border-bottom: 2px solid #4dd1c2;
+ }
+ 
+ /* Main Content */
+ .container {
+     max-width: 800px;
+     margin: 2rem auto;
+     background: white;
+     padding: 2rem;
+     border-radius: 8px;
+     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+ }
+ 
+ h2 {
+     color: #2a9d8f;
+     margin-bottom: 1rem;
+ }
+ 
+ p {
+     margin-bottom: 1rem;
+     font-size: 1em;
+ }
+ 
+ /* Skills Page Styles */
+ .skills-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 00px;
+     justify-content: center;
+     padding: 0;
+     justify-content: center;
+     list-style: none;
+ }
+ 
+ .skills-list li {
+     font-size: 1em;
+     font-weight: bold;
+     background: #ffffff;
+     padding: 10px 15px;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     justify-content: center;
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: #588a85;
+ }
+ 
+ .skills-list li:hover {
+     transform: scale(1.15);
+     -webkit-transform: scale(1.15);
+     -moz-transform: scale(1.15);
+     -ms-transform: scale(1.15);
+     -o-transform: scale(1.15);
+ }
+ 
+ .skills-list i {
+     background: linear-gradient(90deg, #3cafa2, #264653);
+     background-clip: text; /* Standard */
+     -webkit-background-clip: text; /* För WebKit-baserade webbläsare */
+     -webkit-text-fill-color: transparent;
+     display: inline-block;
+     color: #2a9d8f;
+     font-size: 1.4em;
+ }
+ 
+ #fardigheter section {
+     margin-bottom:40px;
+ }
+ 
+ /* CV Page Styles */
+ .cv-section {
+     text-align: center;
+     padding: 2rem;
+     background: white;
+     border-radius: 8px;
+     margin-bottom: 2rem;
+ }
+ 
+ /* CV Header */
+ .cv-section h3 {
+     font-size: 1.4rem;
+     color: #2a9d8f;
+     margin-bottom: 1.5rem;
+ }
+ 
+ /* CV Table */
+ .cv-table {
+     display: flex;
+     flex-direction: column;
+     gap: 20px;
+ }
+ 
+ /* CV Row */
+ .cv-row {
+     display: flex;
+     flex-wrap: wrap; /* Gör att raderna kan bryta på små skärmar */
+     background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
+     border-radius: 8px;
+     padding: 15px;
+     align-items: center;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ /* Hover effekter */
+ .cv-row:hover {
+     transform: scale(1.03);
+ }
+ 
+ .cv-left, .cv-right {
+     flex: 1 1 45%; /* För att ge mer utrymme till båda sektionerna */
+     padding: 10px;
+     text-align: left;
+     box-sizing: border-box; /* För att undvika att padding påverkar layouten */
+ }
+ 
+ .cv-left h4 {
+     font-size: 1.2rem;
+     color: #2a9d8f;
+     margin-bottom: 5px;
+ }
+ 
+ .cv-left p {
+     font-size: 1rem;
+     color: #2a9d8f;
+ }
+ 
+ .cv-left .date {
+     font-size: 0.9rem;
+     color: #8d8d8d;
+     font-weight: bold;
+ }
+ 
+ .cv-right p {
+     font-size: 1rem;
+     color: #444;
+ }
+ 
+ /* Media Query för små skärmar (t.ex. 768px eller mindre) */
+ @media (max-width: 768px) {
+     .cv-section {
+         padding: 1rem;
+     }
+ 
+     /* Justera headern */
+     .cv-section h3 {
+         font-size: 1.2rem;
+     }
+ 
+     /* Justera textstorlekar för mindre skärmar */
+     .cv-left h4 {
+         font-size: 1.1rem;
+     }
+ 
+     .cv-right p {
+         font-size: 0.9rem;
+     }
+ 
+     /* Gör så att raderna staplas på små skärmar */
+     .cv-row {
+         flex-direction: row;
+         padding: 10px; /* Minska padding för att ge mer utrymme */
+     }
+ 
+     .cv-left, .cv-right {
+         flex: 1 1 100%; /* Gör båda sektionerna 100% bredd */
+         padding: 5px; /* Minska padding */
+     }
+ 
+     /* Minska textstorleken för datum och övrig info */
+     .cv-left .date {
+         font-size: 0.85rem;
+     }
+ }
+ 
+ 
+ /* Project Page Styles */
+ .project-list, .github-project-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     justify-content: center; /* Centrerar projekten horisontellt */
+     padding: 0;
+     margin: 0;
+     width: 100%; /* Se till att hela bredden används */
+ }
+ 
+ .project-list {
+     margin-bottom: 20px; /* Skapar ett mellanrum efter dina egna projekt */
+ }
+ 
+ .github-project-list {
+     margin-top: 2px; /* Skapar ett mellanrum innan GitHub-projekten */
+ }
+ 
+ .project-container {
+     flex: 0 0 48%; /* Gör att varje projekt tar upp max 48% av bredden för att skapa två projekt per rad */
+     display: flex;
+     flex-direction: column; /* Gör så att innehållet placeras vertikalt */
+     justify-content: space-between; /* Gör att knappen hålls längst ner */
+     background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
+     padding: 20px;
+     border-radius: 8px;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     box-sizing: border-box; /* Säkerställer att padding inte lägger till extra bredd */
+     height: auto; /* Gör att höjden på containern anpassas efter innehållet */
+ }
+ 
+ .project-container:hover {
+     transform: scale(1.05);
+ }
+ 
+ .project-container h3 {
+     color: #2a9d8f;
+     text-align: center;
+ }
+ 
+ .project-content {
+     display: flex;
+     flex-direction: column; /* Placera bilden och texten i vertikal ordning */
+     align-items: center;
+     gap: 10px; /* Liten mellanrum mellan bilder och text */
+     flex-grow: 1; /* Gör att projektinnehållet växer och lämnar plats för knappen */
+ }
+ 
+ .project-img {
+     width: 120px;
+     height: 120px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 10px; /* Lägg till lite utrymme under bilden */
+ }
+ 
+ @media (max-width: 768px) {
+     .project-list, .github-project-list {
+         flex-direction: column; /* Staplar projekten på små skärmar */
+         align-items: center;
+     }
+ 
+     .project-container {
+         max-width: 100%; /* Tar upp hela bredden på små skärmar */
+         height: auto; /* Automatisk höjd på små skärmar */
+     }
+ }
+ 
+ /* Buttons */
+ .btn {
+     display: flex;
+     justify-content: center; /* Centrerar texten horisontellt */
+     align-items: center; /* Centrerar texten vertikalt */
+     margin-top: 10px;
+     padding: 10px 20px;
+     background: #2a9d8f;
+     color: white;
+     font-size: 1em;
+     text-decoration: none;
+     border-radius: 5px;
+     text-align: center; /* Säkerställ att knappen är centrerad */
+     height: 40px; /* Sätt en fast höjd för knappen */
+     min-width: 150px; /* Sätt en minimal bredd för knappen */
+ }
+ 
+ .btn:hover {
+     background: #33ad9f;
+ }
+ 
+ 
+ /* Media Query för små skärmar (t.ex. 768px eller mindre) */
+ @media (max-width: 768px) {
+     .project-container {
+         padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
+     }
+ 
+     .project-content {
+         align-items: center;
+         gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
+     }
+ 
+     .project-img {
+         width: 100px; /* Minska bildstorleken på små skärmar */
+         height: 100px;
+     }
+ 
+     .btn {
+         margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
+     }
+ 
+     .project-content p {
+         font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
+     }
+ }
+ 
+ 
+ /* Buttons */
+ .btn {
+     display: flex;
+     justify-content: center; /* Centrerar texten horisontellt */
+     align-items: center; /* Centrerar texten vertikalt */
+     margin-top: 10px;
+     padding: 10px 20px;
+     background: #2a9d8f;
+     color: white;
+     font-size: 1em;
+     text-decoration: none;
+     border-radius: 5px;
+     text-align: center; /* Säkerställ att knappen är centrerad */
+     height: 40px; /* Sätt en fast höjd för knappen */
+     min-width: 150px; /* Sätt en minimal bredd för knappen */
+ }
+ 
+ .btn:hover {
+     background: #33ad9f;
+ }
+ 
+ 
+ /* Media Query för små skärmar (t.ex. 768px eller mindre) */
+ @media (max-width: 768px) {
+     .project-container {
+         padding: 15px; /* Reducera padding på små skärmar för att ge mer utrymme */
+     }
+ 
+     .project-content {
+         align-items: center;
+         gap: 15px; /* Öka mellanrummet för bättre läsbarhet */
+     }
+ 
+     .project-img {
+         width: 100px; /* Minska bildstorleken på små skärmar */
+         height: 100px;
+     }
+ 
+     .btn {
+         margin-top: 20px; /* Ge lite extra utrymme mellan texten och knappen */
+     }
+ 
+     .project-content p {
+         font-size: 0.9rem; /* Minska textstorleken för bättre läsbarhet */
+     }
+ }
+ 
+ 
+ 
+ 
+ /* Modal */
+ .modal {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.7);
+     display: none;
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .modal:target {
+     display: flex;
+ }
+ 
+ .modal-content {
+     background: linear-gradient(180deg, #f0f9ff, #d4e9e6);
+     padding: 20px;
+     border-radius: 10px;
+     width: 80%;
+     max-width: 500px;
+     text-align: center;
+     position: relative;
+ }
+ 
+ .close {
+     position: absolute;
+     top: 10px;
+     right: 20px;
+     font-size: 24px;
+     text-decoration: none;
+     color: black;
+ }
+ 
+ /* Contact Page Styles */
+ /* Same as Skills Styles */
+ 
+ /* Footer */
+ footer {
+     text-align: center;
+     font-size: 0.8rem;
+     background: #2a9d8f;
+     color: white;
+     margin-top: 2rem;
+     position: fixed;
+     bottom: 0;
+     width: 100%;
+     height: 50px; /* Sätt en höjd */
+     line-height: 50px; /* Samma som höjden för att centrera texten */
+ }
+ 
+ 
+ 
+ /* Media Query för små skärmar (t.ex. 768px eller mindre) */
+ @media (max-width: 768px) {
+     .nav {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     /* Visa hamburgermenyn som knapp */
+     .menu-toggle {
+         display: block;
+         cursor: pointer;
+         font-size: 16px;
+         color: white;
+         visibility: visible; /* Se till att knappen alltid är synlig */
+         opacity: 1; /* Gör knappen synlig */
+     }
+ 
+     /* Dölj menyn på små skärmar (initialt) */
+     .nav a:not(.menu-toggle) {
+         display: none;
+     }
+ 
+     /* Visa menyn när den aktiveras via JavaScript (när 'open' klassen är tillagd) */
+     .nav.open a {
+         display: block;
+     }
+ 
+     /*Mindre subtitle text*/
+     .subtitle {
+         font-size: 0.9rem;
+         opacity: 0.8;
+     }
+ }
+ 
+ /* EASTER EGGS */
+ /* "Secret" klass: oväntad design */
+ body.secret {
+     background-color: #ff69b4;  /* Heta rosa bakgrund */
+     color: #fff;  /* Vit text */
+     transition: background-color 1s ease, color 1s ease;
+ }
+ 
+ /* Ändra bakgrund i header när Secret Mode är aktiverat */
+ body.secret header {
+     background: #ff1493; /* Djup rosa bakgrund för headern */
+ }
+ 
+ /* Oväntad animation på alla sektioner */
+ body.secret section {
+     animation: surpriseAnimation 3s infinite;
+ }
+ 
+ /* Animation för att göra något överraskande */
+ @keyframes surpriseAnimation {
+     0% {
+         transform: rotate(0deg);
+         background-color: #ff69b4; /* Rosa */
+     }
+     25% {
+         transform: rotate(15deg);
+         background-color: #f0e68c; /* Gul */
+     }
+     50% {
+         transform: rotate(30deg);
+         background-color: #98fb98; /* Grön */
+     }
+     75% {
+         transform: rotate(45deg);
+         background-color: #ff4500; /* Röd */
+     }
+     100% {
+         transform: rotate(0deg);
+         background-color: #ff69b4; /* Återgå till rosa */
+     }
+ }
+ 
+ /* Bättre fokus på länkar */
+ body.secret a {
+     color: #ffff00;  /* Ljusgul för länkar */
+     text-decoration: underline;
+     font-size: 1.2em;
+ }
+ 
+ /* Skapa en hemlig glittrande effekt */
+ body.secret .glitter {
+     font-size: 1.5em;
+     color: #ffcc00;
+     animation: glitterEffect 2s linear infinite;
+ }
+ 
+ @keyframes glitterEffect {
+     0% {
+         text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+     }
+     100% {
+         text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+     }
+ }
+ 
+ /* Uppdatera navigeringsmenyn */
+ body.secret nav {
+     background-color: #ff1493; /* Färgglad bakgrund för navigation */
+ }
+ 
+ body.secret nav a:hover, body.secret nav a.active {
+     color: #ff8c00;
+     font-weight: bold;
+     border-bottom: 2px solid #ff4500;
+ }
+ 
+ body.secret footer {
+     background-color: #8b008b; /* Djup lila för footer */
+ }
+ 
+ /* Uppdatera knappar */
+ body.secret button {
+     background-color: #ff4500;
+     color: #fff;
+     border: 2px solid #ff8c00;
+     font-size: 1.1em;
+ }
+ body.secret button:hover {
+     background-color: #ff8c00;
+     color: #000;
+ }
+ 
+ /* Förändringar för profilbilden */
+ body.secret .profile-pic {
+     transform: rotate(360deg) scale(1.2); /* Roterar och förstorar bilden */
+     box-shadow: 0px 0px 25px #ffcc00; /* Gul skugga */
+     transition: transform 0.6s ease, box-shadow 0.6s ease;
+ }
+ 
+ /* Förändringar vid hover för profilbilden i secret mode */
+ body.secret .profile-pic:hover {
+     transform: scale(1.3) rotate(45deg);  /* Förstorar och roterar bilden på hover */
+     box-shadow: 0px 0px 40px #ff8c00;  /* Orange skugga */
+ }
+ 
+ /* Förändringar för namnet */
+ body.secret .name {
+     font-size: 2.5rem;
+     font-family: 'Dancing Script', cursive;
+     color: #ffcc00;  /* Ljusgul text */
+     text-shadow: 0px 0px 10px #ff4500;  /* Ljusglödande effekt */
+     animation: nameBlinking 1s infinite alternate; /* Blinkande effekt */
+ }
+ 
+ /* Animation för att blinka namnet */
+ @keyframes nameBlinking {
+     0% {
+         opacity: 1;
+     }
+     100% {
+         opacity: 0.5;
+     }
+ }
+ 
+ /* Förändringar för subtitle */
+ body.secret .subtitle {
+     font-size: 1.5rem;
+     opacity: 1;
+     color: #ffcc00;  /* Ljusgul */
+     text-shadow: 0px 0px 5px #ff8c00;
+     animation: subtitlePulse 2s infinite alternate; /* Pulserande effekt */
+ }
+ 
+ /* Animation för att pulsera texten */
+ @keyframes subtitlePulse {
+     0% {
+         opacity: 0.8;
+     }
+     100% {
+         opacity: 1;
+     }
