@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     // Ladda GitHub-projekt
     await loadGitHubProjects();
+
+    // Kolla om Secret Mode var aktiverat och applicera det
+    if (localStorage.getItem("secretMode") === "true") {
+        document.body.classList.add("secret");
+    }
 });
 
 function toggleMenu() {
@@ -78,6 +83,7 @@ async function loadCVData() {
     }
 }
 
+// Ladda portfölj från GitHub
 async function loadGitHubProjects() {
     const projectContainer = document.querySelector(".github-project-list");
     if (projectContainer) {
@@ -156,15 +162,15 @@ const hiddenQuotes = [
 
 console.log(hiddenQuotes[Math.floor(Math.random() * hiddenQuotes.length)]);
 
-// 3. Hemlig dark mode
-let shiftCount = 0;
-
-let secretCount = 0;
-
-// Funktion för att aktivera Secret Mode
+// Funktion för att aktivera eller avaktivera Secret Mode
 function toggleSecretMode() {
-    document.body.classList.toggle('secret');  // Aktivera eller avaktivera 'secret' läget
-    if (document.body.classList.contains('secret')) {
+    document.body.classList.toggle('secret');
+    const isActive = document.body.classList.contains('secret');
+    
+    // Spara tillståndet i localStorage
+    localStorage.setItem("secretMode", isActive);
+
+    if (isActive) {
         console.log("🤫 Secret Mode aktiverat!");
     } else {
         console.log("👀 Secret Mode avaktiverat!");
@@ -172,13 +178,13 @@ function toggleSecretMode() {
 }
 
 // Lyssna på tangenttryckningar för att aktivera Secret Mode
+let secretCount = 0;
 document.addEventListener('keydown', (event) => {
     if (event.key === "S" || event.key === "s") {
         secretCount++;
-        console.log(`'S' tryckt: ${secretCount} gånger`);
 
         if (secretCount >= 5) {  // Om 'S' trycks 5 gånger
-            toggleSecretMode();  // Aktivera Secret Mode
+            toggleSecretMode();  // Aktivera eller avaktivera Secret Mode
             secretCount = 0;     // Nollställ räknaren
         }
     }
