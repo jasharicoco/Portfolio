@@ -8,3 +8,5 @@ This is a little portfolio that is suppsed to represent some of my work and educ
 - **CSS**: Styling for the layout and elements.
 - **JavaScript**: Functionality for loading content dynamically, handling user inputs, and managing interactive features.
 - **GitHub API**: Used to fetch repositories and display them on the page.
+
+GitHub Pages: https://jasharicoco.github.io/Portfolio/
